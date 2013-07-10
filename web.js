@@ -1,9 +1,10 @@
+var fs = require("fs");
 var express = require('express');
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  var buffer = fs.readFile("index.html");
+  var buffer = fs.readFileSync("index.html");
   response.send(buffer.toString());
 });
 
